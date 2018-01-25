@@ -18,10 +18,9 @@ class munki::local_only_manifest (
   }
 
   if $managed_installs == [] and $managed_uninstalls == [] {
-    $ensure = 'absent'
+
   } else {
-    $ensure = 'present'
-  }
+   $ensure = 'present'
 
   $file_content = {
     'managed_installs'   => $managed_installs,
@@ -29,9 +28,12 @@ class munki::local_only_manifest (
   }
 
   file {"/Library/Managed Installs/manifests/${manifest_name}":
-    ensure  => $ensure,
+    ensure  => present,
     mode    => '0644',
     owner   => 0,
     group   => 0,
+    content => plist($file_content)
   }
+  }
+
 }
