@@ -20,7 +20,7 @@ class munki::local_only_manifest (
   if $managed_installs == [] and $managed_uninstalls == [] {
 
   } else {
-   $ensure = 'present'
+  $ensure = 'present'
 
   $file_content = {
     'managed_installs'   => $managed_installs,
