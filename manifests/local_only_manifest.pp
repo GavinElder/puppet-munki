@@ -33,6 +33,5 @@ class munki::local_only_manifest (
     mode    => '0644',
     owner   => 0,
     group   => 0,
-    content => plist($file_content)
   }
 }
