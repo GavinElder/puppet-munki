@@ -71,7 +71,7 @@ class munki::config {
     manifest_name      => $local_only_manifest_name
   }
 
-  $profile = {
+  $profile_test = {
     'PayloadContent' => [
       {
         'PayloadContent' => {
@@ -103,7 +103,7 @@ class munki::config {
 
   mac_profiles_handler::manage { 'ManagedInstalls':
     ensure      => present,
-    file_source => plist($profile),
+    file_source => plist($profile_test),
     type        => 'template',
   }
 
