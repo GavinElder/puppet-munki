@@ -78,7 +78,7 @@ class munki::config {
           'ManagedInstalls' => {
             'Forced' => [
               {
-                'mcx_preference_settings' => $settings_to_write
+                'mcx_preference_settings' => "test"
               }
             ]
           }
